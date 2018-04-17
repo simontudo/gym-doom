@@ -71,7 +71,7 @@ class DoomEnv(gym.Env):
         self.is_initialized = False                 # Indicates that reset() has been called
         self.curr_seed = 0
         self.lock = (DoomLock()).get_lock()
-        self.action_space = spaces.MultiDiscrete([[0, 1]] * 38 + [[-10, 10]] * 2 + [[-100, 100]] * 3)
+        self.action_space = spaces.Discrete(43)
         self.allowed_actions = list(range(NUM_ACTIONS))
         self.screen_height = 480
         self.screen_width = 640
@@ -175,12 +175,17 @@ class DoomEnv(gym.Env):
         return
 
     def _step(self, action):
-        if NUM_ACTIONS != len(action):
-            logger.warn('Doom action list must contain %d items. Padding missing items with 0' % NUM_ACTIONS)
-            old_action = action
-            action = [0] * NUM_ACTIONS
-            for i in range(len(old_action)):
-                action[i] = old_action[i]
+        # if NUM_ACTIONS != len(action):
+        #     logger.warn('Doom action list must contain %d items. Padding missing items with 0' % NUM_ACTIONS)
+        #     old_action = action
+        #     action = [0] * NUM_ACTIONS
+        #     for i in range(len(old_action)):
+        #         action[i] = old_action[i]
+
+        # Convert to array
+        action_arr = np.zeros(NUM_ACTIONS, dtype=int)
+        action_arr[action] = 1
+        action = action_arr
         # action is a list of numbers but DoomGame.make_action expects a list of ints
         if len(self.allowed_actions) > 0:
             list_action = [int(action[action_idx]) for action_idx in self.allowed_actions]
