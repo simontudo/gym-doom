@@ -7,7 +7,6 @@ Thanks a lot to ppaquette for coding this. Since his repository is no longer mai
 <div id="installation"></div>Installation
 ============
 
-**Method (1)**
 You need to install [gym-pull](https://github.com/simontudo/gym-pull)
 
  To load and run the environments, run
