@@ -8,7 +8,7 @@ Thanks a lot to ppaquette for coding this. Since his repository is no longer mai
 ============
 
 **Method (1)**
-You need to install [gym-pull](https://github.com/ppaquette/gym-pull)
+You need to install [gym-pull](https://github.com/simontudo/gym-pull)
 
  To load and run the environments, run
 
