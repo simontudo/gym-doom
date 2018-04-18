@@ -29,9 +29,9 @@ To install dependencies, run the following:
 
 Environments included:
 ============
-- ~~aquette/meta-Doom-v0~~
-- ppaquette/DoomBasic-v0
-- ~~aquette/DoomCorridor-v0~~
+- ~~ppaquette/meta-Doom-v0~~
+- simontudo/DoomBasic-v0
+- ~~ppaquette/DoomCorridor-v0~~
 - ~~ppaquette/DoomDefendCenter-v0~~
 - ~~ppaquette/DoomDefendLine-v0~~
 - ~~ppaquette/DoomHealthGathering-v0~~
